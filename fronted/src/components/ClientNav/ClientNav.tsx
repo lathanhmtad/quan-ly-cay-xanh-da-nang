@@ -1,9 +1,9 @@
 import logo from '../../assets/imgs/logo-no-background.png'
-import {Link} from "react-router-dom";
-import Search from "antd/es/input/Search";
+import {Link} from "react-router-dom"
+import Search from "antd/es/input/Search"
 
 export default function ClientNav() {
-    return <div className='bg-danger'>
+    return <div className='bg-header'>
         <div className='container'>
             <div className='navigation d-flex align-items-center justify-content-between'>
                 <div>
@@ -25,8 +25,8 @@ export default function ClientNav() {
                     </li>
                 </ul>
 
-                <div>
-                    <Search placeholder="Tìm kiếm" enterButton="Search" size="large"/>
+                <div style={{width: '30%'}}>
+                    <Search placeholder="Tìm kiếm" size="large"/>
                 </div>
 
             </div>

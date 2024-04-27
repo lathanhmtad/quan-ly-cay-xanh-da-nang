@@ -6,17 +6,17 @@ export default function ClientTopBar() {
         <div className='container'>
             <div className='topbar d-flex justify-content-between align-items-center'>
                 <div>
-                    <span className='d-flex align-items-center'>
+                    <span className='d-flex align-items-center gap-2'>
                         <MdOutlineLocationOn/>
                         48 Cao thắng, Hải Châu, Đà Nẵng
                     </span>
                 </div>
                 <div className='d-flex align-items-center gap-4'>
-                    <span className='d-flex align-items-center'>
+                    <span className='d-flex align-items-center gap-1'>
                         <FaPhoneVolume/>
                         1900 1020
                     </span>
-                    <span className='d-flex align-items-center'>
+                    <span className='d-flex align-items-center gap-1'>
                         <MdEmail/>
                         cayxanhT&T@gmail.com
                     </span>

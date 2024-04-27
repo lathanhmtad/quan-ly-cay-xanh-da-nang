@@ -1,0 +1,33 @@
+.client-footer {
+  li {
+    a {
+      color: white;
+    }
+  }
+
+  .color-instagram {
+    color: #D777B6;
+  }
+
+  .color-facebook {
+    color: #6A83C5;
+  }
+
+  .color-yellow {
+    color: #B69352;
+  }
+
+  .border-underline {
+    position: relative;
+    margin-bottom: 32px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 30%;
+      bottom: -10px;
+      height: 2px;
+      background-color: #B69352;
+    }
+  }
+}

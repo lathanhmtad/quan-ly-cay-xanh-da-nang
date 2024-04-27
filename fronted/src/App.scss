@@ -1,3 +1,14 @@
+$header-background-color: #3D7363;
+$footer-background-color: #224D31;
+
 a {
   text-decoration: none;
+}
+
+.bg-header {
+  background-color: $header-background-color;
+}
+
+.bg-footer {
+  background-color: $footer-background-color;
 }
