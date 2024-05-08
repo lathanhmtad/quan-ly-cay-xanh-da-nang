@@ -56,6 +56,7 @@ export const userEntityDetails = (data: NguoiDungResponse): DescriptionsProps['i
 ];
 
 class ManageUserConfigs {
+    static rowKey = "maNguoiDung"
     static resourceUrl = ResourceUrl.NGUOI_DUNG;
     static resourceKey = 'nguoiDung';
     static manageTitle = 'Quản lý người dùng';

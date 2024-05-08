@@ -6,7 +6,7 @@ import com.example.entity.ThongTinNguoiDanPhanAnh;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PhuongXaMapper.class})
 public interface DonThuMapper extends GenericMapper<ThongTinNguoiDanPhanAnh, DonThuRequest, DonThuResponse> {
     @Override
     @Mapping(source = "chiTietDiaChi.moTaDiaChi", target = "chiTietDiaChi.diaChiGanCayXanhNhat")

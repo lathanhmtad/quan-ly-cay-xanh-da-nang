@@ -12,6 +12,7 @@ public class ToaDoCayPhanAnh {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long maToaDoCay;
     private String toaDoCay;
+
     @ManyToOne
     @JoinColumn(name = "ma_thong_tin_phan_anh", referencedColumnName = "maThongTinPhanAnh")
     private ThongTinNguoiDanPhanAnh thongTinNguoiDanPhanAnh;

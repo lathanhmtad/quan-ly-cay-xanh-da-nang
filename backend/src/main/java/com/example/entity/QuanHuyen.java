@@ -6,9 +6,9 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity
 @Getter
 @Setter
+@Entity
 public class QuanHuyen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +16,6 @@ public class QuanHuyen {
     private String tenQuan;
     private Integer tongSoCay;
 
-    @OneToMany
+    @OneToMany(mappedBy = "quanHuyen")
     private List<PhuongXa> phuongXa;
 }

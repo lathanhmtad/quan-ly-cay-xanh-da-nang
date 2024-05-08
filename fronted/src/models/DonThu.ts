@@ -1,5 +1,5 @@
 import BaseResponse from "./BaseResponse";
-import {ToaDoResponse} from "./ToaDo";
+import {ToaDoDto} from "./ToaDo";
 import {DiaChiResponse} from "./DiaChi";
 
 export interface DonThuResponse extends BaseResponse {
@@ -9,7 +9,7 @@ export interface DonThuResponse extends BaseResponse {
     sdt: string
     soLuongCay: number
     lyDoPhanAnh: string
-    toaDoCayPhanAnh: ToaDoResponse[]
+    toaDoCayPhanAnh: ToaDoDto[]
     chiTietDiaChi: DiaChiResponse
     trangThai: boolean
 }

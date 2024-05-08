@@ -27,6 +27,7 @@ public class Cay {
     @ManyToOne
     @JoinColumn(name = "ma_trang_thai_cay", referencedColumnName = "maTrangThaiCay")
     private TrangThaiCay trangThaiCay;
+
     @OneToOne
     @JoinColumn(name = "ma_dia_chi", referencedColumnName = "maDiaChi")
     private ChiTietDiaChi chiTietDiaChi;

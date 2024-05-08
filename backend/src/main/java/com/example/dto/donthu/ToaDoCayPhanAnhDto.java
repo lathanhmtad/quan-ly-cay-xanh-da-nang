@@ -5,7 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ToaDoResponse {
-    private Long maToaDoCay;
+public class ToaDoCayPhanAnhDto {
     private String toaDoCay;
 }

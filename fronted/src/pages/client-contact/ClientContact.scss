@@ -7,4 +7,22 @@
   .ant-form-item-label {
     padding: 0;
   }
+
+  .ant-form-item-control-input {
+  }
+
+  .ant-form-item-control-input-content {
+    display: flex;
+    gap: 8px;
+
+    .anticon.anticon-minus-circle {
+      font-size: 24px;
+    }
+  }
+
+  .ant-form-item-explain-error {
+    margin-bottom: 8px;
+  }
+
+
 }

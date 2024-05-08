@@ -1,10 +1,10 @@
-package com.example.dto.donthu;
+package com.example.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class HinhAnhResponse {
+public class HinhAnhDto {
     private String hinhAnh;
 }

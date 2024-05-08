@@ -1,5 +1,6 @@
 package com.example.dto.donthu;
 
+import com.example.dto.HinhAnhDto;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,8 +15,8 @@ public class DonThuResponse {
     private String sdt;
     private Integer soLuongCay;
     private String lyDoPhanAnh;
-    private List<ToaDoResponse> toaDoCayPhanAnh;
-    private DiaChiResponse chiTietDiaChi;
-    private List<HinhAnhResponse> hinhAnh;
+    private List<ToaDoCayPhanAnhDto> toaDoCayPhanAnh;
+    private List<HinhAnhDto> hinhAnh;
+    private ChiTietDiaChiResponse chiTietDiaChi;
     private boolean trangThai;
 }

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class DiaChiResponse {
+public class ChiTietDiaChiResponse {
     private String diaChiGanCayXanhNhat;
     private PhuongXaResponse phuongXa;
 }

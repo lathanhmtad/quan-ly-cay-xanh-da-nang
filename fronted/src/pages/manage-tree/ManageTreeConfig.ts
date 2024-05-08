@@ -72,6 +72,7 @@ export const treeEntityDetails = (data: CayXanhResponse): DescriptionsProps['ite
 ];
 
 class ManageTreeConfigs {
+    static rowKey = "maCay"
     static resourceUrl = ResourceUrl.TREE;
     static resourceKey = 'nguoiDung';
     static manageTitle = 'Quản lý người dùng';

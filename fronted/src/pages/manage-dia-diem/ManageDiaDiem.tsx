@@ -1,42 +1,37 @@
-import ManageHeaderTitle from "../../components/ManageHeaderTitle";
-import ManageHeader from "../../components/ManageHeader";
-import ManageHeaderButtons from "../../components/ManageHeaderButtons";
-import useGetAllApi from "../../hooks/use-get-all-api";
-import {NguoiDungResponse} from "../../models/NguoiDung";
-import ManageUserConfig, {userTableHeads, userEntityDetails} from "./ManageUserConfig";
-import PageConfigs from "../PageConfigs";
-import {ListResponse} from "../../utils/FetchUtils";
-import SearchPanel from "../../components/SearchPanel";
-import ManageMain from "../../components/ManageMain";
-import ManageTable from "../../components/ManageTable";
-import ManagePagination from "../../components/ManagePagination";
-import useResetManagePageState from "../../hooks/use-reset-manage-page-state";
+import {Tabs, TabsProps} from "antd";
+import ManageDiaDiemTheoQuanHuyen from "./ManageDiaDiemTheoQuanHuyen";
+import ManageDiaDiemTheoPhuongXa from "./ManageDiaDiemTheoPhuongXa";
+import ManageDiaDiemTheoTuyenDuong from "./ManageDiaDiemTheoTuyenDuong";
+import ManageDiaDiemTheoCongVien from "./ManageDiaDiemTheoCongVien";
+
+const items: TabsProps['items'] = [
+    {
+        key: 'theo-quan-huyen',
+        label: 'Quản lý theo quận',
+        children: <ManageDiaDiemTheoQuanHuyen/>,
+    },
+    {
+        key: 'theo-phuong-xa',
+        label: 'Quản lý theo phường xã',
+        children: <ManageDiaDiemTheoPhuongXa/>,
+    },
+    {
+        key: 'theo-tuyen-duong',
+        label: 'Quản lý theo tuyến đường',
+        children: <ManageDiaDiemTheoTuyenDuong/>,
+    },
+    {
+        key: 'theo-cong-vien',
+        label: 'Quản lý theo công viên',
+        children: <ManageDiaDiemTheoCongVien/>,
+    },
+];
 
 export default function ManageDiaDiem() {
 
-    useResetManagePageState()
+    const onChange = (key: string) => {
+        console.log(key);
+    };
 
-    const {
-        isLoading,
-        data: listResponse = PageConfigs.initListResponse as ListResponse<NguoiDungResponse>
-    } = useGetAllApi<NguoiDungResponse>(ManageUserConfig.resourceUrl, ManageUserConfig.resourceKey)
-
-    return <div>
-        <ManageHeader>
-            <ManageHeaderTitle title={'Quản lý người dùng'}/>
-            <ManageHeaderButtons listResponse={listResponse} titleAddBtn='Thêm mới người dùng' resourceUrl={ManageUserConfig.resourceUrl}
-                                 resourceKey={ManageUserConfig.resourceKey}/>
-        </ManageHeader>
-
-        <SearchPanel/>
-
-        <ManageMain listResponse={listResponse} isLoading={isLoading}>
-            <ManageTable listResponse={listResponse}
-                         resourceUrl={ManageUserConfig.resourceUrl}
-                         resourceKey={ManageUserConfig.resourceKey}
-                         tableHeads={userTableHeads}
-                         entityDetails={userEntityDetails}/>
-        </ManageMain>
-        <ManagePagination listResponse={listResponse}/>
-    </div>
+    return <Tabs defaultActiveKey="theo-quan-huyen" items={items} onChange={onChange}/>;
 }

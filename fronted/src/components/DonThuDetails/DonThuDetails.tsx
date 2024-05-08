@@ -78,7 +78,7 @@ export default function DonThuDetails() {
                 </Form.Item>
 
                 <span className='fs-6 mb-1 d-block'>Tọa độ</span>
-                {donThu.toaDoCayPhanAnh.map(item => <div key={item.maToaDoCay}><Form.Item<DonThuFieldForm>
+                {donThu.toaDoCayPhanAnh.map((item, index) => <div key={index}><Form.Item<DonThuFieldForm>
                     label=""
                     name="toaDo"
                     initialValue={item.toaDoCay}

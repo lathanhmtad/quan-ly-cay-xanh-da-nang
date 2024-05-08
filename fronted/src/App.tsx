@@ -16,6 +16,7 @@ import ManageTree from "./pages/manage-tree";
 import ManageKeHoach from "./pages/manage-ke-hoach";
 import ManageDonThu from "./pages/manage-don-thu";
 import DonThuDetails from "./components/DonThuDetails";
+import ManageDiaDiem from "./pages/manage-dia-diem";
 
 function App() {
     return <div>
@@ -33,6 +34,7 @@ function App() {
                 <Route path='ke-hoach' element={<ManageKeHoach/>}/>
                 <Route path='don-thu' element={<ManageDonThu/>}/>
                 <Route path='chi-tiet-don-thu/:id' element={<DonThuDetails/>}/>
+                <Route path='dia-diem' element={<ManageDiaDiem/>}/>
             </Route>
 
             <Route path='/login' element={<LoginPage/>}/>

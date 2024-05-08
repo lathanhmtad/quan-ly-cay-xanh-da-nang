@@ -16,6 +16,7 @@ export interface ManageTableProps<T> {
     resourceKey: string
     tableHeads: TableProps<T>['columns']
     entityDetails: (data: T) => DescriptionsProps['items']
+    rowKey?: string
 }
 
 function ManageTable<T extends BaseResponse>(props: ManageTableProps<T>) {
@@ -71,7 +72,7 @@ function ManageTable<T extends BaseResponse>(props: ManageTableProps<T>) {
             {/*} item`}</strong>*/}
             <Table
                 // rowSelection={rowSelection}
-                rowKey={PageConfigs.rowKey}
+                rowKey={props.rowKey ? props.rowKey : PageConfigs.rowKey}
                 pagination={false}
                 bordered
                 columns={columns}

@@ -1,7 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
-import FetchUtils, { ListResponse, RequestParams } from '../utils/FetchUtils';
-import { useAppSelector } from '../redux/hooks';
-import { useEffect } from 'react';
+import {useQuery} from '@tanstack/react-query';
+import FetchUtils, {ListResponse, RequestParams} from '../utils/FetchUtils';
+import {useAppSelector} from '../redux/hooks';
+import {useEffect} from 'react';
 import FilterUtils from '../utils/FilterUtils';
 
 function useGetAllApi<O>(

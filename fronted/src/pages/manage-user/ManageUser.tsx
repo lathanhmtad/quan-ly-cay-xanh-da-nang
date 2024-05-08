@@ -24,18 +24,21 @@ export default function ManageUser() {
     return <div>
         <ManageHeader>
             <ManageHeaderTitle title={'Quản lý người dùng'}/>
-            <ManageHeaderButtons listResponse={listResponse} titleAddBtn='Thêm mới người dùng' resourceUrl={ManageUserConfig.resourceUrl}
+            <ManageHeaderButtons listResponse={listResponse} titleAddBtn='Thêm mới người dùng'
+                                 resourceUrl={ManageUserConfig.resourceUrl}
                                  resourceKey={ManageUserConfig.resourceKey}/>
         </ManageHeader>
 
         <SearchPanel/>
 
         <ManageMain listResponse={listResponse} isLoading={isLoading}>
-            <ManageTable listResponse={listResponse}
-                         resourceUrl={ManageUserConfig.resourceUrl}
-                         resourceKey={ManageUserConfig.resourceKey}
-                         tableHeads={userTableHeads}
-                         entityDetails={userEntityDetails}/>
+            <ManageTable
+                rowKey={ManageUserConfig.rowKey}
+                listResponse={listResponse}
+                resourceUrl={ManageUserConfig.resourceUrl}
+                resourceKey={ManageUserConfig.resourceKey}
+                tableHeads={userTableHeads}
+                entityDetails={userEntityDetails}/>
         </ManageMain>
         <ManagePagination listResponse={listResponse}/>
     </div>

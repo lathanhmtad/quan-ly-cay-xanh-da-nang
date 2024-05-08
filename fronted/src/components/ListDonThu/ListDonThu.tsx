@@ -6,20 +6,23 @@ import {DonThuResponse} from "../../models/DonThu";
 import ManageDonThuConfig from "../../pages/manage-don-thu/ManageDonThuConfig";
 import useResetManagePageState from "../../hooks/use-reset-manage-page-state";
 import {useNavigate} from "react-router-dom";
+import {useAppDispatch} from "../../redux/hooks";
+import {setActiveFilter} from "../../redux/slices/managePageSlice";
+import {BooleanOperator, Filter} from "../../utils/FilterUtils";
+import {useEffect} from "react";
+import ManagePagination from "../ManagePagination";
 
 interface ListDonThuProps {
-    status: boolean
+    listResponse: ListResponse<DonThuResponse>
 }
 
 export default function ListDonThu(props: ListDonThuProps) {
 
-    useResetManagePageState()
+    const {listResponse} = props
+
     const navigate = useNavigate();
 
-    const {
-        isLoading,
-        data: listResponse = PageConfigs.initListResponse as ListResponse<DonThuResponse>
-    } = useGetAllApi<DonThuResponse>(ManageDonThuConfig.resourceUrl, ManageDonThuConfig.resourceKey)
+
 
     return <div>
         {listResponse.content.map(item => <Card key={item.maThongTinPhanAnh}
@@ -44,5 +47,7 @@ export default function ListDonThu(props: ListDonThuProps) {
                 </button>
             </div>
         </Card>)}
+
+        <ManagePagination listResponse={listResponse}/>
     </div>
 }

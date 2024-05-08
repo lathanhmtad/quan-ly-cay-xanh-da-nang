@@ -21,4 +21,7 @@ public class ChiTietDiaChi {
     @ManyToOne
     @JoinColumn(name = "ma_phuong", referencedColumnName = "maPhuong")
     private PhuongXa phuongXa;
+
+    @OneToOne(mappedBy = "chiTietDiaChi")
+    private Cay cay;
 }

@@ -1,66 +1,154 @@
 import ResourceUrl from "../../constants/ResouceUrl";
 import {DescriptionsProps, TableProps} from "antd";
-import {NguoiDungResponse} from "../../models/NguoiDung";
+import {CongVienResponse, PhuongXaResponse, QuanHuyenResponse, TuyenDuongResponse} from "../../models/DiaDiem";
 
-export const userTableHeads: TableProps<NguoiDungResponse>['columns'] = [
+export const diaDiemQuanHuyenTableHeads: TableProps<QuanHuyenResponse>['columns'] = [
     {
-        title: 'Tên',
-        dataIndex: 'hoVaTen',
-        key: 'hoVaTen'
+        title: 'Mã địa điểm',
+        dataIndex: 'maQuan',
+        key: 'maQuan'
     },
     {
-        title: 'Ngày sinh',
-        dataIndex: 'ngaySinh',
-        key: 'ngaySinh'
+        title: 'Quận/Huyện',
+        dataIndex: 'tenQuan',
+        key: 'tenQUan'
     },
     {
-        title: 'Email',
-        dataIndex: 'email',
-        key: 'email',
+        title: 'Tổng phường xã',
+        dataIndex: 'tongPhuongXa',
+        key: 'tongPhuongXa',
     },
     {
-        title: 'Số điện thoại',
-        dataIndex: 'sdt',
-        key: 'sdt',
+        title: 'Tổng số cây',
+        dataIndex: 'tongSoCay',
+        key: 'tongSoCay',
+    },
+];
+
+export const diaDiemPhuongXaTableHeads: TableProps<PhuongXaResponse>['columns'] = [
+    {
+        title: 'Mã địa điểm',
+        dataIndex: 'maPhuong',
+        key: 'maPhuong'
     },
     {
-        title: 'Bộ phận',
-        dataIndex: 'vaiTro',
-        key: 'vaiTro',
+        title: 'Quận/Huyện',
+        dataIndex: 'quanHuyen',
+        key: 'quanHuyen',
+        render: (value, record) => `${record.quanHuyen.tenQuan}`
+    },
+    {
+        title: 'Phường xã',
+        dataIndex: 'tenPhuong',
+        key: 'tenPhuong',
+    },
+    {
+        title: 'Tổng tuyến đường / Công viên',
+        dataIndex: 'tongTuyenDuongCongVien',
+        key: 'tongTuyenDuongCongVien',
+    },
+    {
+        title: 'Tổng số cây',
+        dataIndex: 'tongSoCayTrongPhuongXa',
+        key: 'tongSoCayTrongPhuongXa',
+    },
+];
+
+export const diaDiemTuyenDuongTableHeads: TableProps<TuyenDuongResponse>['columns'] = [
+    {
+        title: 'Mã địa điểm',
+        dataIndex: 'maTuyenDuong',
+        key: 'maPhuong'
+    },
+    {
+        title: 'Quận/Huyện',
+        dataIndex: 'phuongXa',
+        key: 'quanHuyen',
+        render: (value, record) => `${record.phuongXa.quanHuyen.tenQuan}`
+    },
+    {
+        title: 'Phường xã',
+        dataIndex: 'phuongXa',
+        key: 'tenPhuong',
+        render: (value, record) => `${record.phuongXa.tenPhuong}`
+    },
+    {
+        title: 'Tuyến đường',
+        dataIndex: 'tenTuyenDuong',
+        key: 'tenTuyenDuong',
+    },
+    {
+        title: 'Tổng số cây',
+        dataIndex: 'phuongXa',
+        key: 'tongSoCay',
+        render: (value, record) => `${record.phuongXa.tongSoCayTrongPhuongXa}`
+    },
+];
+
+export const diaDiemCongVienTableHeads: TableProps<CongVienResponse>['columns'] = [
+    {
+        title: 'Mã địa điểm',
+        dataIndex: 'maCongVien',
+        key: 'maCongVien'
+    },
+    {
+        title: 'Quận/Huyện',
+        dataIndex: 'tuyenDuong',
+        key: 'quanHuyen',
+        render: (value, record) => `${record.tuyenDuong[0].phuongXa.quanHuyen.tenQuan}`
+    },
+    {
+        title: 'Phường xã',
+        dataIndex: 'tuyenDuong',
+        key: 'tenPhuong',
+        render: (value, record) => `${record.tuyenDuong[0].phuongXa.tenPhuong}`
+    },
+    {
+        title: 'Tên công viên',
+        dataIndex: 'tenCongVien',
+        key: 'tenCongVien',
     },
     {
         title: 'Địa chỉ',
-        dataIndex: 'diaChi',
-        key: 'email',
+        dataIndex: 'tuyenDuong',
+        key: 'diaChi',
+        render: (value, record) => `${record.tuyenDuong.map(item => item.tenTuyenDuong + ',')}`
     },
     {
-        title: 'Thuộc đội ngũ',
-        dataIndex: 'doiNgu',
-        key: 'doiNgu',
+        title: 'Tổng số cây',
+        dataIndex: 'tuyenDuong',
+        key: 'tongSoCay',
+        render: (value, record) =>
+            `${record.tuyenDuong.reduce((previousValue, currentValue) =>
+                previousValue + currentValue.phuongXa.tongSoCayTrongPhuongXa, 0)}`
     },
 ];
 
-export const userEntityDetails = (data: NguoiDungResponse): DescriptionsProps['items'] => [
-    {
-        key: 'maNguoiDung',
-        label: 'Mã người dùng',
-        children: data.maNguoiDung,
-        span: 24
-    },
-    {
-        key: 'hoVaTen',
-        label: 'Họ và tên',
-        children: data.hoVaTen,
-        span: 24
-    },
-];
+export const diaDiemQuanHuyenEntityDetails = (data: QuanHuyenResponse): DescriptionsProps['items'] => [];
+export const diaDiemPhuongXaEntityDetails = (data: PhuongXaResponse): DescriptionsProps['items'] => [];
+export const diaDiemTuyenDuongEntityDetails = (data: TuyenDuongResponse): DescriptionsProps['items'] => [];
+export const diaDiemCongVienEntityDetails = (data: CongVienResponse): DescriptionsProps['items'] => [];
 
 class ManageUserConfigs {
-    static resourceUrl = ResourceUrl.NGUOI_DUNG;
-    static resourceKey = 'nguoiDung';
-    static manageTitle = 'Quản lý người dùng';
-    static createTitle = 'Thêm người dùng';
-    static updateTitle = 'Cập nhập người dùng';
+    static rowKeyQuanHuyen = "maQuan"
+    static rowKeyPhuongXa = "maPhuong"
+    static rowKeyTuyenDuong = "maTuyenDuong"
+    static rowKeyCongVien = "maCongVien"
+
+
+    static resourceUrlDiaDiemQuanHuyen = ResourceUrl.DIA_DIEM_QUAN_HUYEN;
+    static resourceUrlDiaDiemPhuongXa = ResourceUrl.DIA_DIEM_PHUONG_XA;
+    static resourceUrlDiaDiemTuyenDuong = ResourceUrl.DIA_DIEM_TUYEN_DUONG;
+    static resourceUrlDiaDiemCongVien = ResourceUrl.DIA_DIEM_CONG_VIEN;
+
+    static resourceKeyDiaDiemQuanHuyen = 'diaDiemQuanHuyen';
+    static resourceKeyDiaDiemPhuongXa = 'diaDiemPhuongXa';
+    static resourceKeyDiaDiemTuyenDuong = 'diaDiemTuyenDuong';
+    static resourceKeyDiaDiemCongVien = 'diaDiemCongVien';
+
+    static manageTitle = 'Quản lý địa điểm';
+    static createTitle = 'Thêm địa điểm';
+    static updateTitle = 'Cập nhập địa điểm';
 }
 
 export default ManageUserConfigs;

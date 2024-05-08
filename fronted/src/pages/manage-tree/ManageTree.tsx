@@ -33,11 +33,13 @@ export default function ManageTree() {
         <SearchPanel/>
 
         <ManageMain listResponse={listResponse} isLoading={isLoading}>
-            <ManageTable listResponse={listResponse}
-                         resourceUrl={ManageTreeConfig.resourceUrl}
-                         resourceKey={ManageTreeConfig.resourceKey}
-                         tableHeads={treeTableHeads}
-                         entityDetails={treeEntityDetails}/>
+            <ManageTable
+                rowKey={ManageTreeConfig.rowKey}
+                listResponse={listResponse}
+                resourceUrl={ManageTreeConfig.resourceUrl}
+                resourceKey={ManageTreeConfig.resourceKey}
+                tableHeads={treeTableHeads}
+                entityDetails={treeEntityDetails}/>
         </ManageMain>
         <ManagePagination listResponse={listResponse}/>
     </div>

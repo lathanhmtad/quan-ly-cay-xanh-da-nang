@@ -3,6 +3,10 @@ package com.example.controller;
 
 import com.example.constants.ResourceName;
 import com.example.constants.SearchFields;
+import com.example.dto.address.CongVienResponse;
+import com.example.dto.address.PhuongXaResponse;
+import com.example.dto.address.QuanHuyenResponse;
+import com.example.dto.address.TuyenDuongResponse;
 import com.example.dto.donthu.DonThuRequest;
 import com.example.dto.donthu.DonThuResponse;
 import com.example.dto.kehoach.KeHoachRequest;
@@ -11,18 +15,9 @@ import com.example.dto.tree.CayXanhRequest;
 import com.example.dto.tree.CayXanhResponse;
 import com.example.dto.user.NguoiDungRequest;
 import com.example.dto.user.NguoiDungResponse;
-import com.example.entity.Cay;
-import com.example.entity.KeHoach;
-import com.example.entity.NguoiDung;
-import com.example.entity.ThongTinNguoiDanPhanAnh;
-import com.example.mapper.CayMapper;
-import com.example.mapper.DonThuMapper;
-import com.example.mapper.KeHoachMapper;
-import com.example.mapper.NguoiDungMapper;
-import com.example.repository.CayRepo;
-import com.example.repository.DonThuRepo;
-import com.example.repository.KeHoachRepo;
-import com.example.repository.NguoiDungRepo;
+import com.example.entity.*;
+import com.example.mapper.*;
+import com.example.repository.*;
 import com.example.service.CrudService;
 import com.example.service.GenericService;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -49,12 +44,20 @@ public class GenericMappingRegister {
     private GenericController<CayXanhRequest, CayXanhResponse> cayXanhController;
     private GenericController<KeHoachRequest, KeHoachResponse> keHoachController;
     private GenericController<DonThuRequest, DonThuResponse> donThuController;
+    private GenericController<Object, QuanHuyenResponse> diaDiemTheoQuanController;
+    private GenericController<Object, PhuongXaResponse> diaDiemTheoPhuongXaController;
+    private GenericController<Object, TuyenDuongResponse> diaDiemTheoTuyenDuongController;
+    private GenericController<Object, CongVienResponse> diaDiemTheoCongVienController;
 
     // services
     private GenericService<NguoiDung, NguoiDungRequest, NguoiDungResponse> userService;
     private GenericService<Cay, CayXanhRequest, CayXanhResponse> cayXanhService;
     private GenericService<KeHoach, KeHoachRequest, KeHoachResponse> keHoachService;
     private GenericService<ThongTinNguoiDanPhanAnh, DonThuRequest, DonThuResponse> donThuService;
+    private GenericService<QuanHuyen, Object, QuanHuyenResponse> diaDiemTheoQuanService;
+    private GenericService<PhuongXa, Object, PhuongXaResponse> diaDiemTheoPhuongXaService;
+    private GenericService<TuyenDuong, Object, TuyenDuongResponse> diaDiemTheoTuyenDuongService;
+    private GenericService<CongVien, Object, CongVienResponse> diaDiemTheoCongVienService;
 
     @PostConstruct
     public void registerControllers() throws NoSuchMethodException {
@@ -87,6 +90,33 @@ public class GenericMappingRegister {
                 ResourceName.NGUOI_DUNG
         ), DonThuRequest.class);
 
+        register("dia-diem-theo-quan", diaDiemTheoQuanController, diaDiemTheoQuanService.init(
+                context.getBean(QuanHuyenRepo.class),
+                context.getBean(QuanHuyenMapper.class),
+                SearchFields.NGUOI_DUNG,
+                ResourceName.NGUOI_DUNG
+        ), Object.class);
+
+        register("dia-diem-theo-phuong-xa", diaDiemTheoPhuongXaController, diaDiemTheoPhuongXaService.init(
+                context.getBean(PhuongXaRepo.class),
+                context.getBean(PhuongXaMapper.class),
+                SearchFields.NGUOI_DUNG,
+                ResourceName.NGUOI_DUNG
+        ), Object.class);
+
+        register("dia-diem-theo-tuyen-duong", diaDiemTheoTuyenDuongController, diaDiemTheoTuyenDuongService.init(
+                context.getBean(TuyenDuongRepo.class),
+                context.getBean(TuyenDuongMapper.class),
+                SearchFields.NGUOI_DUNG,
+                ResourceName.NGUOI_DUNG
+        ), Object.class);
+
+        register("dia-diem-theo-cong-vien", diaDiemTheoCongVienController, diaDiemTheoCongVienService.init(
+                context.getBean(CongVienRepo.class),
+                context.getBean(CongVienMapper.class),
+                SearchFields.NGUOI_DUNG,
+                ResourceName.NGUOI_DUNG
+        ), Object.class);
     }
 
     private <I, O> void register(

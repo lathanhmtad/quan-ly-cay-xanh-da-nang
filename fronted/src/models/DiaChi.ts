@@ -1,4 +1,4 @@
-import {PhuongXaResponse} from "./PhuongXa";
+import {PhuongXaResponse} from "./DiaDiem";
 
 export interface DiaChiResponse {
     diaChiGanCayXanhNhat: number

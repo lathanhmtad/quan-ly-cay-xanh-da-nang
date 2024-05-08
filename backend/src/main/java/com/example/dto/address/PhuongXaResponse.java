@@ -8,6 +8,7 @@ import lombok.Setter;
 public class PhuongXaResponse {
     private Long maPhuong;
     private String tenPhuong;
-
     private QuanHuyenResponse quanHuyen;
+    private Integer tongSoCayTrongPhuongXa;
+    private Integer tongTuyenDuongCongVien;
 }

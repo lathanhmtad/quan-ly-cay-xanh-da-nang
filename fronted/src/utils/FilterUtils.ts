@@ -2,7 +2,11 @@ export enum NumberOperator {
     EQUALS = 'num_eq'
 }
 
-export type FilterOperator = NumberOperator
+export enum BooleanOperator {
+    EQUALS = "bool_eq"
+}
+
+export type FilterOperator = NumberOperator | BooleanOperator
 
 export enum OrderType {
     ASC = 'asc',
@@ -37,9 +41,10 @@ class FilterUtils {
     };
 
     private static convertFilterCriteriaToRsql = (filterCriteria: FilterCriteria) => {
-        if(filterCriteria.property && filterCriteria.operator) {
-            if(filterCriteria.value) {
+        if (filterCriteria.property && filterCriteria.operator) {
+            if (filterCriteria.value) {
                 switch (filterCriteria.operator) {
+                    case BooleanOperator.EQUALS:
                     case NumberOperator.EQUALS:
                         return filterCriteria.property + '==' + filterCriteria.value
                 }

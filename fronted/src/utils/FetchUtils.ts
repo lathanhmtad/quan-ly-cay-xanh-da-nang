@@ -1,4 +1,6 @@
-import { store } from '../redux/store';
+import {store} from '../redux/store';
+import ApplicationConstants from "../constants/ApplicationConstants";
+import {HinhAnhDto} from "../models/HinhAnh";
 
 export interface RequestParams {
     page?: number;
@@ -29,11 +31,25 @@ type BasicRequestParams = Record<string, string | number | null | boolean>
 
 class FetchUtils {
     static async getAll<O>(resourceUrl: string, requestParams?: RequestParams): Promise<ListResponse<O>> {
-        const response = await fetch(FetchUtils.concatParams(resourceUrl, { ...requestParams }));
+        const response = await fetch(FetchUtils.concatParams(resourceUrl, {...requestParams}));
         if (response.ok) {
             return await response.json();
         }
         throw await response.json();
+    }
+
+    static async uploadMultipleImages(images: File[]): Promise<HinhAnhDto[]> {
+        const formData = new FormData()
+
+        images.forEach(image => formData.append('images', image))
+        const response = await fetch(ApplicationConstants.API_PATH + '/images/upload-multiple', {
+            method: 'POST',
+            body: formData
+        })
+        if (!response.ok) {
+            throw await response.json()
+        }
+        return await response.json()
     }
 
     static async getById<O>(resourceUrl: string, entityId: number): Promise<O> {
@@ -87,7 +103,7 @@ class FetchUtils {
     static async deleteByIds<T>(resourceUrl: string, entityIds: T[]): Promise<void> {
         const response = await fetch(resourceUrl, {
             method: 'DELETE',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(entityIds)
         });
         if (!response.ok)
