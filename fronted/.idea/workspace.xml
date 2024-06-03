@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c4537d84-7d7b-40a0-b4ef-cc8343621822" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/CayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/PhuongXaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/TuyenDuongController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/CayResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/ChiTietDiaChiResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/repository/HinhAnhRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/repository/LoaiCayRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/repository/TrangThaiRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/use-update-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeCreate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeCreate.vm.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeUpdate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeUpdate.vm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/ListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/ListResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/CongVienResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/CongVienResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/PhuongXaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/PhuongXaResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/QuanHuyenResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/QuanHuyenResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/TuyenDuongResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/TuyenDuongResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/donthu/DonThuResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/donthu/DonThuResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/tree/CayXanhRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/tree/CayXanhRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/tree/CayXanhResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/tree/CayXanhResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/Cay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/Cay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/ChiTietDiaChi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/ChiTietDiaChi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/PhuongXa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/PhuongXa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/QuanHuyen.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/QuanHuyen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/ThongTinNguoiDanPhanAnh.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/ThongTinNguoiDanPhanAnh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/TuyenDuong.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/TuyenDuong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/CayMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/CayMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/CongVienMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/CongVienMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/PhuongXaMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/PhuongXaMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/QuanHuyenMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/QuanHuyenMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/TuyenDuongMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/TuyenDuongMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/utils/CloudinaryUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/utils/CloudinaryUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagram/dapm.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../diagram/dapm.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diagram/erd_dapm.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/../diagram/erd_dapm.mdj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientCategories/ClientCategories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientCategories/ClientCategories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientNews/ClientNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientNews/ClientNews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientProjectImplemented/ClientProjectImplemented.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientProjectImplemented/ClientProjectImplemented.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DonThuDetails/DonThuDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DonThuDetails/DonThuDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListDonThu/ListDonThu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListDonThu/ListDonThu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ManageHeaderButtons/ManageHeaderButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManageHeaderButtons/ManageHeaderButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ManageTable/ManageTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManageTable/ManageTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-create-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-create-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-upload-multiple-images-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-upload-multiple-images-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/BaseResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/BaseResponse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/CayXanh.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/CayXanh.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/DiaDiem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/DiaDiem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/DonThu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/DonThu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/client-contact/ClientContact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/client-contact/ClientContact.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemConfig.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/ManageTree.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeManage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-user/ManageUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-user/ManageUser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/FetchUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FetchUtils.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2gU4eEaRLWeYvZvbfCfJYYqYxFQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/java-projects/electro/electro-server&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\java-projects\\quan-ly-cay-xanh-da-nang\\fronted\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="$PROJECT_DIR$/../../../Program Files/nodejs/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4537d84-7d7b-40a0-b4ef-cc8343621822" name="Changes" comment="" />
+      <created>1715738916120</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715738916120</updated>
+      <workItem from="1715738917276" duration="4890000" />
+      <workItem from="1716035063575" duration="7343000" />
+      <workItem from="1716082932144" duration="14702000" />
+      <workItem from="1716167030177" duration="7282000" />
+      <workItem from="1716178929365" duration="789000" />
+      <workItem from="1716181418848" duration="679000" />
+      <workItem from="1716192894257" duration="15000" />
+      <workItem from="1716213264396" duration="1014000" />
+      <workItem from="1716515507067" duration="15000" />
+      <workItem from="1716889850697" duration="1206000" />
+      <workItem from="1717042653013" duration="6001000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

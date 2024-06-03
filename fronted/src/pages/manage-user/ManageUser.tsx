@@ -24,7 +24,7 @@ export default function ManageUser() {
     return <div>
         <ManageHeader>
             <ManageHeaderTitle title={'Quản lý người dùng'}/>
-            <ManageHeaderButtons listResponse={listResponse} titleAddBtn='Thêm mới người dùng'
+            <ManageHeaderButtons managerPath='nguoi-dung' listResponse={listResponse} titleAddBtn='Thêm mới người dùng'
                                  resourceUrl={ManageUserConfig.resourceUrl}
                                  resourceKey={ManageUserConfig.resourceKey}/>
         </ManageHeader>

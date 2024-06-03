@@ -4,6 +4,7 @@ import com.example.dto.HinhAnhDto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -19,4 +20,5 @@ public class DonThuResponse {
     private List<HinhAnhDto> hinhAnh;
     private ChiTietDiaChiResponse chiTietDiaChi;
     private boolean trangThai;
+    private Date ngayGui;
 }

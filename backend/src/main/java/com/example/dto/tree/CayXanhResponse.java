@@ -1,5 +1,6 @@
 package com.example.dto.tree;
 
+import com.example.dto.HinhAnhDto;
 import com.example.entity.HinhAnh;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
@@ -11,6 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 public class CayXanhResponse {
+    private Long id;
     private Long maCay;
     private String toaDo;
     private String tenCay;
@@ -22,5 +24,5 @@ public class CayXanhResponse {
     private String duongKinh;
     private String diaChi;
     private String trangThaiCay;
-    private List<HinhAnh> hinhAnh;
+    private List<HinhAnhDto> hinhAnh;
 }

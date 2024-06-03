@@ -41,6 +41,10 @@ export default function ListDonThu(props: ListDonThuProps) {
                         <p style={{width: '200px'}} className='mb-0 fs-6 ms-2'>Lý do gửi:</p>
                         <strong>{item.lyDoPhanAnh}</strong>
                     </div>
+                    <div className='d-flex align-items-center mb-1'>
+                        <p style={{width: '200px'}} className='mb-0 fs-6 ms-2'>Ngày gửi:</p>
+                        <strong>{item.ngayGui}</strong>
+                    </div>
                 </div>
                 <button onClick={() => navigate(`/admin/chi-tiet-don-thu/${item.maThongTinPhanAnh}`)}
                         className='btn btn-primary me-2 mt-5'>Xem chi tiết

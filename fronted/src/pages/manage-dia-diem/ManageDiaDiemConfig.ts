@@ -4,14 +4,14 @@ import {CongVienResponse, PhuongXaResponse, QuanHuyenResponse, TuyenDuongRespons
 
 export const diaDiemQuanHuyenTableHeads: TableProps<QuanHuyenResponse>['columns'] = [
     {
-        title: 'Mã địa điểm',
+        title: 'Mã quận',
         dataIndex: 'maQuan',
         key: 'maQuan'
     },
     {
         title: 'Quận/Huyện',
         dataIndex: 'tenQuan',
-        key: 'tenQUan'
+        key: 'tenQuan'
     },
     {
         title: 'Tổng phường xã',
@@ -21,21 +21,20 @@ export const diaDiemQuanHuyenTableHeads: TableProps<QuanHuyenResponse>['columns'
     {
         title: 'Tổng số cây',
         dataIndex: 'tongSoCay',
-        key: 'tongSoCay',
+        key: 'tongSoCay'
     },
 ];
 
 export const diaDiemPhuongXaTableHeads: TableProps<PhuongXaResponse>['columns'] = [
     {
-        title: 'Mã địa điểm',
+        title: 'Mã phường',
         dataIndex: 'maPhuong',
         key: 'maPhuong'
     },
     {
         title: 'Quận/Huyện',
-        dataIndex: 'quanHuyen',
-        key: 'quanHuyen',
-        render: (value, record) => `${record.quanHuyen.tenQuan}`
+        dataIndex: 'tenQuan',
+        key: 'tenQuan'
     },
     {
         title: 'Phường xã',
@@ -43,12 +42,12 @@ export const diaDiemPhuongXaTableHeads: TableProps<PhuongXaResponse>['columns'] 
         key: 'tenPhuong',
     },
     {
-        title: 'Tổng tuyến đường / Công viên',
-        dataIndex: 'tongTuyenDuongCongVien',
-        key: 'tongTuyenDuongCongVien',
+        title: 'Tổng tuyến đươờng',
+        dataIndex: 'tongTuyenDuong',
+        key: 'tongTuyenDuong',
     },
     {
-        title: 'Tổng số cây',
+        title: 'Tổng số cây trong phường xã',
         dataIndex: 'tongSoCayTrongPhuongXa',
         key: 'tongSoCayTrongPhuongXa',
     },
@@ -56,21 +55,19 @@ export const diaDiemPhuongXaTableHeads: TableProps<PhuongXaResponse>['columns'] 
 
 export const diaDiemTuyenDuongTableHeads: TableProps<TuyenDuongResponse>['columns'] = [
     {
-        title: 'Mã địa điểm',
+        title: 'Mã tuyến đường',
         dataIndex: 'maTuyenDuong',
         key: 'maPhuong'
     },
     {
         title: 'Quận/Huyện',
-        dataIndex: 'phuongXa',
-        key: 'quanHuyen',
-        render: (value, record) => `${record.phuongXa.quanHuyen.tenQuan}`
+        dataIndex: 'tenQuan',
+        key: 'tenQuan',
     },
     {
         title: 'Phường xã',
-        dataIndex: 'phuongXa',
-        key: 'tenPhuong',
-        render: (value, record) => `${record.phuongXa.tenPhuong}`
+        dataIndex: 'tenPhuongXa',
+        key: 'tenPhuongXa',
     },
     {
         title: 'Tuyến đường',
@@ -78,30 +75,32 @@ export const diaDiemTuyenDuongTableHeads: TableProps<TuyenDuongResponse>['column
         key: 'tenTuyenDuong',
     },
     {
+        title: 'Tổng công viên',
+        dataIndex: 'tongCongVien',
+        key: 'tongCongVien',
+    },
+    {
         title: 'Tổng số cây',
-        dataIndex: 'phuongXa',
+        dataIndex: 'tongSoCay',
         key: 'tongSoCay',
-        render: (value, record) => `${record.phuongXa.tongSoCayTrongPhuongXa}`
     },
 ];
 
 export const diaDiemCongVienTableHeads: TableProps<CongVienResponse>['columns'] = [
     {
-        title: 'Mã địa điểm',
+        title: 'Mã công viên',
         dataIndex: 'maCongVien',
         key: 'maCongVien'
     },
     {
         title: 'Quận/Huyện',
-        dataIndex: 'tuyenDuong',
-        key: 'quanHuyen',
-        render: (value, record) => `${record.tuyenDuong[0].phuongXa.quanHuyen.tenQuan}`
+        dataIndex: 'tenQuan',
+        key: 'tenQuan',
     },
     {
         title: 'Phường xã',
-        dataIndex: 'tuyenDuong',
+        dataIndex: 'tenPhuong',
         key: 'tenPhuong',
-        render: (value, record) => `${record.tuyenDuong[0].phuongXa.tenPhuong}`
     },
     {
         title: 'Tên công viên',
@@ -111,16 +110,13 @@ export const diaDiemCongVienTableHeads: TableProps<CongVienResponse>['columns'] 
     {
         title: 'Địa chỉ',
         dataIndex: 'tuyenDuong',
-        key: 'diaChi',
-        render: (value, record) => `${record.tuyenDuong.map(item => item.tenTuyenDuong + ',')}`
+        key: 'tuyenDuong',
+        render: (text: string[]) => text.join(', ')
     },
     {
         title: 'Tổng số cây',
-        dataIndex: 'tuyenDuong',
+        dataIndex: 'tongSoCay',
         key: 'tongSoCay',
-        render: (value, record) =>
-            `${record.tuyenDuong.reduce((previousValue, currentValue) =>
-                previousValue + currentValue.phuongXa.tongSoCayTrongPhuongXa, 0)}`
     },
 ];
 

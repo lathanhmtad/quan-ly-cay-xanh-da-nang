@@ -14,6 +14,7 @@ import org.mapstruct.Named;
 public interface CayMapper extends GenericMapper<Cay, CayXanhRequest, CayXanhResponse> {
 
     @Override
+    @Mapping(source = "maCay", target = "id")
     @Mapping(source = "loaiCay.tenLoai", target = "loaiCay")
     @Mapping(source = "trangThaiCay.tinhTrangCay", target = "trangThaiCay")
     @Mapping(source = "chiTietDiaChi.moTaDiaChi", target = "diaChi")//qualifiedByName = "mapDiaChi")

@@ -21,8 +21,5 @@ public class PhuongXa {
     private QuanHuyen quanHuyen;
 
     @OneToMany(mappedBy = "phuongXa")
-    private List<ChiTietDiaChi> chiTietDiaChi;
-
-    @OneToMany(mappedBy = "phuongXa")
     private List<TuyenDuong> tuyenDuong;
 }

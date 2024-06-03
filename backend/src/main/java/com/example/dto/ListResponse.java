@@ -25,6 +25,10 @@ public class ListResponse<T> {
         this.last = page.isLast();
     }
 
+    public <E> ListResponse(List<T> content) {
+        this.content = content;
+    }
+
     public static <T, E> ListResponse<T> of(List<T> content, Page<E> page) {
         return new ListResponse<>(content, page);
     }

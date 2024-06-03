@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Date;
 import java.util.List;
 
 @Getter
@@ -18,6 +19,7 @@ public class ThongTinNguoiDanPhanAnh {
     private String sdt;
     private Integer soLuongCay;
     private String lyDoPhanAnh;
+    private Date ngayGui;
 
     @OneToMany(mappedBy = "thongTinNguoiDanPhanAnh")
     private List<ToaDoCayPhanAnh> toaDoCayPhanAnh;

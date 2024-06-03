@@ -32,4 +32,7 @@ public class TuyenDuong {
     )
     @ManyToMany
     private List<CongVien> congVien;
+
+    @OneToMany(mappedBy = "tuyenDuong")
+    private List<ChiTietDiaChi> chiTietDiaChi;
 }

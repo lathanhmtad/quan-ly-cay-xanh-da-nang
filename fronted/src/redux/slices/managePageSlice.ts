@@ -1,54 +1,68 @@
-import React from 'react';
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import FilterUtils, { Filter } from '../../utils/FilterUtils';
+import { RequestParams } from '../../utils/FetchUtils';
 import PageConfigs from '../../pages/PageConfigs';
-import {Filter} from '../../utils/FilterUtils';
 
 interface ManagePageState {
     activePage: number;
     activePageSize: number;
-    activeSort: string;
-    selections: Record<number, React.Key[]>;
     activeFilter: Filter | null;
-    filter: Filter[];
+    searchToken: string;
+    selections: number[];
+    filters: Filter[];
+    activeFilterPanel: boolean;
 }
 
-const initialState: ManagePageState = {
+const initialManagePageState: ManagePageState = {
     activePage: PageConfigs.initListResponse.pageNumber,
     activePageSize: PageConfigs.initListResponse.pageSize,
-    activeSort: '',
-    selections: {},
     activeFilter: null,
-    filter: []
+    searchToken: '',
+    selections: [],
+    filters: [],
+    activeFilterPanel: false,
 };
 
 const managePageSlice = createSlice({
     name: 'managePage',
-    initialState,
+    initialState: initialManagePageState,
     reducers: {
-        setActivePage: (state, action: PayloadAction<number>): void => {
+        setActivePage: (state, action: PayloadAction<number>) => {
             state.activePage = action.payload;
         },
-        setSelections: (state, action: PayloadAction<React.Key[]>): void => {
-            state.selections = {
-                ...state.selections,
-                [state.activePage]: action.payload
-            };
+        setActivePageSize: (state, action: PayloadAction<number>) => {
+            state.activePageSize = action.payload;
         },
         setActiveFilter: (state, action: PayloadAction<Filter | null>) => {
-            state.activeFilter = action.payload
+            state.activeFilter = action.payload;
         },
-        resetManagePageState: (state): void => {
-            Object.assign(state, initialState)
+        setSearchToken: (state, action: PayloadAction<string>) => {
+            state.searchToken = action.payload;
+        },
+        setSelections: (state, action: PayloadAction<number[]>) => {
+            state.selections = action.payload;
+        },
+        setFilters: (state, action: PayloadAction<Filter[]>) => {
+            state.filters = action.payload;
+        },
+        setActiveFilterPanel: (state, action: PayloadAction<boolean>) => {
+            state.activeFilterPanel = action.payload;
+        },
+        resetManagePageState: (state) => {
+            return initialManagePageState;
         }
-    },
+    }
 });
 
 export const {
-    setActiveFilter,
     setActivePage,
+    setActivePageSize,
+    setActiveFilter,
+    setSearchToken,
     setSelections,
+    setFilters,
+    setActiveFilterPanel,
     resetManagePageState
-}
-    = managePageSlice.actions;
+} = managePageSlice.actions;
 
 export default managePageSlice.reducer;

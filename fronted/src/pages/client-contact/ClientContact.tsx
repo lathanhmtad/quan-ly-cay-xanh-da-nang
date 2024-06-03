@@ -107,7 +107,6 @@ export default function ClientContact() {
                 <Form.Item<DonThuRequest>
                     label="Email"
                     name="email"
-                    rules={[{required: true, message: 'Vui lòng nhập email!'}]}
                 >
                     <Input/>
                 </Form.Item>

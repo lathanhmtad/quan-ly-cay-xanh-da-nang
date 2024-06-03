@@ -24,7 +24,8 @@ public class CloudinaryUtils {
         try {
             Map params = ObjectUtils.asMap(
                     "use_filename", true,
-                    "unique_filename", true
+                    "unique_filename", true,
+                    "folder", rootFolder
             );
             Map uploadResult = cloudinary.uploader().upload(file.getBytes(), params);
             return uploadResult.get("url").toString();

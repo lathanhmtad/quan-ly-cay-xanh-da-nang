@@ -23,7 +23,7 @@ function useManageTableViewModel<T extends BaseResponse>({
 
     const
         {
-            selections,
+            // selections,
             activePage,
         }
             = useAppSelector(state => state.managePage);
@@ -31,7 +31,7 @@ function useManageTableViewModel<T extends BaseResponse>({
     const deleteByIdApi = useDeleteByIdApi(resourceUrl, resourceKey);
 
     const onSelectChange = (newSelectedRowKeys: React.Key[]): void => {
-        dispatch(setSelections(newSelectedRowKeys));
+        // dispatch(setSelections(newSelectedRowKeys));
     };
 
     const handleViewEntityButton = (entityId: number, url? : string, key? : string) => {
@@ -84,7 +84,7 @@ function useManageTableViewModel<T extends BaseResponse>({
         onSelectChange,
         handleViewEntityButton,
         activePage,
-        selections,
+        // selections,
         handleDeleteEntityButton
     };
 }

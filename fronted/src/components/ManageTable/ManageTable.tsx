@@ -9,6 +9,7 @@ import {MdOutlineDelete} from "react-icons/md";
 import {BiDetail} from "react-icons/bi";
 
 import './ManageTable.scss'
+import {Link} from "react-router-dom";
 
 export interface ManageTableProps<T> {
     listResponse: ListResponse<T>
@@ -43,11 +44,11 @@ function ManageTable<T extends BaseResponse>(props: ManageTableProps<T>) {
                         onClick={() => handleViewEntityButton(record.id)}>
                         <BiDetail className='fs-5 text-white'/>
                     </Button>
-                    <Button
-                        className='d-flex align-items-center justify-content-center'
-                        type='primary'>
+                    <Link
+                        to={`update/${record.id}`}
+                        className='d-flex align-items-center justify-content-center btn btn-primary'>
                         <FaRegEdit className='fs-5'/>
-                    </Button>
+                    </Link>
                     <Button
                         className='d-flex align-items-center justify-content-center'
                         danger

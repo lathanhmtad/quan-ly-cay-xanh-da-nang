@@ -44,7 +44,7 @@ export default function DonThuDetails() {
                     chiTietDiaChi: donThu.chiTietDiaChi.diaChiGanCayXanhNhat,
                     lyDoPhanAnh: donThu.lyDoPhanAnh,
                     tenPhuong: donThu?.chiTietDiaChi.phuongXa.tenPhuong,
-                    tenQuan: donThu?.chiTietDiaChi.phuongXa.quanHuyen.tenQuan
+                    // tenQuan: donThu?.chiTietDiaChi.phuongXa.quanHuyen.tenQuan
                 }}
                 autoComplete="off"
             >

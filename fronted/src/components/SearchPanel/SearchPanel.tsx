@@ -5,11 +5,7 @@ import Search from "antd/es/input/Search";
 
 function SearchPanel() {
     return (
-        <div className='d-flex align-items-center justify-content-between mt-3 mb-4'>
-            <div>
-                <Search size='large' placeholder="input search text" style={{ width: 200 }} />
-            </div>
-
+        <div className='d-flex align-items-center justify-content-between mb-2'>
             <div>
                 <Search size='large' placeholder="input search text" style={{ width: 200 }} />
             </div>

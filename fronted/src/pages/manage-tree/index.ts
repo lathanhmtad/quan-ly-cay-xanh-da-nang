@@ -1,3 +1,5 @@
-import ManageTree from "./ManageTree";
+import TreeManage from "./TreeManage";
+import TreeCreate from "./TreeCreate";
+import TreeUpdate from './TreeUpdate'
 
-export default ManageTree
+export {TreeManage as default, TreeCreate, TreeUpdate}

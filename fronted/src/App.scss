@@ -12,3 +12,38 @@ a {
 .bg-footer {
   background-color: $footer-background-color;
 }
+
+h2 {
+  margin: 0;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 8px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  background-color: grey;
+  height: 2px;
+  width: 8%;
+  position: absolute;
+}
+
+.divider::before {
+  right: 52%;
+}
+
+.divider::after {
+  left: 52%;
+}
+
+.leaf-icon {
+  font-size: 24px;
+  color: green;
+  padding: 0 10px;
+}

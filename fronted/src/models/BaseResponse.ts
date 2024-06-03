@@ -1,5 +1,5 @@
 interface BaseResponse {
-    id: number
+    id : number
 }
 
 export default BaseResponse;

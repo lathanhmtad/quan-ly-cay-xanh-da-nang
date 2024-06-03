@@ -12,4 +12,5 @@ export interface DonThuResponse extends BaseResponse {
     toaDoCayPhanAnh: ToaDoDto[]
     chiTietDiaChi: DiaChiResponse
     trangThai: boolean
+    ngayGui: string
 }

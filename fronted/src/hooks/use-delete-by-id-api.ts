@@ -1,25 +1,20 @@
-import {useMutation, useQueryClient} from '@tanstack/react-query';
-import FetchUtils from '../utils/FetchUtils';
-import {App} from 'antd';
+import { useMutation, useQueryClient } from 'react-query';
+import FetchUtils, { ErrorMessage } from '../utils/FetchUtils';
+import NotifyUtils from '../utils/NotifyUtils';
 
 function useDeleteByIdApi<T = number>(resourceUrl: string, resourceKey: string) {
-    const queryClient = useQueryClient()
-    const {notification} = App.useApp()
+    const queryClient = useQueryClient();
 
-    return useMutation({
-        mutationFn: async (entityId: T): Promise<void> => FetchUtils.deleteById(resourceUrl, entityId),
-        onSuccess: () => {
-            notification.success({
-                message: 'Thông báo',
-                description: 'Xóa thành công'
-            })
-            void queryClient.invalidateQueries({queryKey: [resourceKey, 'getAll']})
-        },
-        onError: () => notification.error({
-            message: 'Thông báo',
-            description: 'Xóa không thành công'
-        })
-    })
+    return useMutation<void, ErrorMessage, T>(
+        (entityId) => FetchUtils.deleteById(resourceUrl, entityId),
+        {
+            onSuccess: () => {
+                NotifyUtils.simpleSuccess('Xóa thành công');
+                void queryClient.invalidateQueries([resourceKey, 'getAll']);
+            },
+            onError: () => NotifyUtils.simpleFailed('Xóa không thành công'),
+        }
+    );
 }
 
-export default useDeleteByIdApi
+export default useDeleteByIdApi;

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -28,7 +29,10 @@ public class Cay {
     @JoinColumn(name = "ma_trang_thai_cay", referencedColumnName = "maTrangThaiCay")
     private TrangThaiCay trangThaiCay;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "ma_dia_chi", referencedColumnName = "maDiaChi")
     private ChiTietDiaChi chiTietDiaChi;
+
+    @OneToMany(mappedBy = "cay")
+    private List<HinhAnh> hinhAnh;
 }

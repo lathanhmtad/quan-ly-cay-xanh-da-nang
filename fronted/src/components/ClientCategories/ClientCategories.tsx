@@ -1,8 +1,12 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+
 export default function ClientCategories() {
     return <div>
-        <h1>DANH MỤC CÂY</h1>
+        <h1 className='text-center'>DANH MỤC CÂY</h1>
+        <div className="divider text-center">
+            <span className="leaf-icon">&#127806;</span>
+        </div>
 
         <div className='row'>
             <div className='col-3'>

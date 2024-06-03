@@ -1,10 +1,9 @@
 package com.example.controller;
 
-import com.example.dto.ListResponse;
+import com.example.dto.CollectionWrapper;
 import com.example.dto.UploadImageResponse;
 import com.example.service.ImageService;
 import lombok.AllArgsConstructor;
-import org.hibernate.type.format.jaxb.JaxbXmlFormatMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,9 +27,13 @@ public class ImageController {
     }
 
     @PostMapping("/upload-multiple")
-    public ResponseEntity<List<UploadImageResponse>> uploadMultipleImages(@RequestParam("images") MultipartFile[] images) {
-        return ResponseEntity.ok(Stream.of(images)
-                .map(imageService::store)
-                .collect(Collectors.toList()));
+    public ResponseEntity<CollectionWrapper<UploadImageResponse>> uploadMultipleImages(
+            @RequestParam("images") MultipartFile[] images) {
+
+        List<UploadImageResponse> list = Stream.of(images).map(imageService::store).collect(Collectors.toList());
+
+        CollectionWrapper<UploadImageResponse> collectionWrapper = new CollectionWrapper<>(list);
+
+        return ResponseEntity.ok(collectionWrapper);
     }
 }

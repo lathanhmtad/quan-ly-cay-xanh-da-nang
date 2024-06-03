@@ -6,6 +6,7 @@ import {
 // import {CiTrash} from 'react-icons/ci';
 
 import {ListResponse} from '../../utils/FetchUtils';
+import {Link} from "react-router-dom";
 
 // import useManageHeaderButtonsViewModel from './ManageHeaderButtons.vm';
 
@@ -14,6 +15,7 @@ export interface ManageHeaderButtonsProps {
     resourceUrl: string;
     resourceKey: string;
     titleAddBtn?: string;
+    managerPath?: string;
 }
 
 function ManageHeaderButtons(props: ManageHeaderButtonsProps) {
@@ -21,12 +23,15 @@ function ManageHeaderButtons(props: ManageHeaderButtonsProps) {
 
     return (
         <Space>
-            <Button
+            <Link
+                className='btn btn-success text-black d-flex gap-2 align-items-center'
+                to='create'
                 style={{
                     background: '#DDF247',
                     color: 'black'
-                }} icon={<PlusOutlined/>} size="large" type="text"
-                ghost>{props.titleAddBtn ? props.titleAddBtn : 'Thêm mới'}</Button>
+                }}>
+                <PlusOutlined />
+                {props.titleAddBtn ? props.titleAddBtn : 'Thêm mới'}</Link>
             {/*<Button onClick={handleDeleteBatchEntitiesButton} icon={<CiTrash/>} size="large" danger>Xóa hàng loạt</Button>*/}
         </Space>
     );

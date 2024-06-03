@@ -14,7 +14,6 @@ public class QuanHuyen {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long maQuan;
     private String tenQuan;
-    private Integer tongSoCay;
 
     @OneToMany(mappedBy = "quanHuyen")
     private List<PhuongXa> phuongXa;

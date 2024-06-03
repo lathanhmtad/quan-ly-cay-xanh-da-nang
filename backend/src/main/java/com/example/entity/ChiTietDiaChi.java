@@ -19,8 +19,8 @@ public class ChiTietDiaChi {
     private String moTaDiaChi;
 
     @ManyToOne
-    @JoinColumn(name = "ma_phuong", referencedColumnName = "maPhuong")
-    private PhuongXa phuongXa;
+    @JoinColumn(name = "ma_tuyen_duong", referencedColumnName = "maTuyenDuong")
+    private TuyenDuong tuyenDuong;
 
     @OneToOne(mappedBy = "chiTietDiaChi")
     private Cay cay;
