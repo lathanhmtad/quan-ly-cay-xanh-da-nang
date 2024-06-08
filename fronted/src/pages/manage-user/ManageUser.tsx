@@ -20,6 +20,7 @@ export default function ManageUser() {
         isLoading,
         data: listResponse = PageConfigs.initListResponse as ListResponse<NguoiDungResponse>
     } = useGetAllApi<NguoiDungResponse>(ManageUserConfig.resourceUrl, ManageUserConfig.resourceKey)
+    console.log(listResponse)
 
     return <div>
         <ManageHeader>

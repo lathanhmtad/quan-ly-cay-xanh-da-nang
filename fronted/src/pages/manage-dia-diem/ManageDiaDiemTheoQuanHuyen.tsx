@@ -35,6 +35,7 @@ export default function ManageDiaDiemTheoQuanHuyen() {
 
         <ManageMain listResponse={listResponse} isLoading={isLoading}>
             <ManageTable
+                hideAction={true}
                 rowKey={ManageDiaDiemConfig.rowKeyQuanHuyen}
                 listResponse={listResponse}
                 resourceUrl={ManageDiaDiemConfig.resourceUrlDiaDiemQuanHuyen}

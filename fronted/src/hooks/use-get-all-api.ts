@@ -19,6 +19,8 @@ function useGetAllApi<O>(
         searchToken,
     } = useAppSelector(state => state.managePage);
 
+    console.log(searchToken)
+
     if (!requestParams) {
         requestParams = {
             page: activePage,

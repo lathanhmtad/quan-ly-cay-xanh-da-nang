@@ -29,10 +29,10 @@ public class Cay {
     @JoinColumn(name = "ma_trang_thai_cay", referencedColumnName = "maTrangThaiCay")
     private TrangThaiCay trangThaiCay;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ma_dia_chi", referencedColumnName = "maDiaChi")
     private ChiTietDiaChi chiTietDiaChi;
 
-    @OneToMany(mappedBy = "cay")
+    @OneToMany(mappedBy = "cay", cascade = CascadeType.ALL)
     private List<HinhAnh> hinhAnh;
 }

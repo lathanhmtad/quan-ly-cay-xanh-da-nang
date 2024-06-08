@@ -193,7 +193,7 @@ export default function ClientContact() {
                     <Input/>
                 </Form.Item>
 
-                <Row>
+                <Row gutter={[24, 0]}>
                     <Col span={12}>
                         <Form.Item
                             label="Quận/Huyện"
@@ -227,7 +227,7 @@ export default function ClientContact() {
                     </Col>
                 </Row>
 
-                <Row>
+                <Row gutter={[24, 0]}>
                     <Col span={12}>
                         <Form.Item<DonThuRequest>
                             label="Lý do phản ánh"

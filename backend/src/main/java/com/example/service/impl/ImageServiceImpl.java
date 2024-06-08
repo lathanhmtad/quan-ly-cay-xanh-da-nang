@@ -16,7 +16,9 @@ public class ImageServiceImpl implements ImageService {
     @Override
     public UploadImageResponse store(MultipartFile image) {
         String url = cloudinaryUtils.upload(image);
-        return new UploadImageResponse(url);
+        UploadImageResponse uploadImageResponse = new UploadImageResponse();
+        uploadImageResponse.setImageUrl(url);
+        return uploadImageResponse;
     }
 
     @Override

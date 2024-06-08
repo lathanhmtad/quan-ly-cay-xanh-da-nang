@@ -1,4 +1,4 @@
-import {Button, DescriptionsProps, Space, Table, TableProps} from 'antd';
+import {Button, Descriptions, DescriptionsProps, Drawer, Space, Table, TableProps} from 'antd';
 import BaseResponse from "../../models/BaseResponse"
 import {ListResponse} from "../../utils/FetchUtils"
 import useManageTableViewModel from "./ManageTable.vm"
@@ -10,6 +10,8 @@ import {BiDetail} from "react-icons/bi";
 
 import './ManageTable.scss'
 import {Link} from "react-router-dom";
+import EntityDetailsTable from "../EntityDetailsTable";
+import resouceUrl from "../../constants/ResouceUrl";
 
 export interface ManageTableProps<T> {
     listResponse: ListResponse<T>
@@ -17,7 +19,8 @@ export interface ManageTableProps<T> {
     resourceKey: string
     tableHeads: TableProps<T>['columns']
     entityDetails: (data: T) => DescriptionsProps['items']
-    rowKey?: string
+    rowKey?: string,
+    hideAction?: boolean,
 }
 
 function ManageTable<T extends BaseResponse>(props: ManageTableProps<T>) {
@@ -26,22 +29,25 @@ function ManageTable<T extends BaseResponse>(props: ManageTableProps<T>) {
         tableHeads = [],
         // onSelectChange,
         // activePage,
+        open,
+        setOpen,
         // selections,
         handleViewEntityButton,
         handleDeleteEntityButton,
     } = useManageTableViewModel<T>(props)
 
+
     const columns: TableProps<T>['columns'] = [
         ...tableHeads,
-        {
+        ...(!props.hideAction ? [{
             title: 'Action',
             key: 'action',
-            render: (_, record) => (
+            render: (text : any, record: T) => (
                 <Space size="middle">
                     <Button
                         type='text'
                         className='d-flex align-items-center justify-content-center bg-warning'
-                        onClick={() => handleViewEntityButton(record.id)}>
+                        onClick={() => handleViewEntityButton(record)}>
                         <BiDetail className='fs-5 text-white'/>
                     </Button>
                     <Link
@@ -58,7 +64,7 @@ function ManageTable<T extends BaseResponse>(props: ManageTableProps<T>) {
                     </Button>
                 </Space>
             ),
-        },
+        }] : [])
     ]
 
     // const rowSelection = {
@@ -68,6 +74,17 @@ function ManageTable<T extends BaseResponse>(props: ManageTableProps<T>) {
 
     return (
         <>
+            {/*<Drawer*/}
+            {/*    title="Thông tin về cây"*/}
+            {/*    closable={false}*/}
+            {/*    size='large'*/}
+            {/*    placement='left'*/}
+            {/*    open={open}*/}
+            {/*    onClose={() => setOpen(false)}*/}
+            {/*>*/}
+            {/*    <EntityDetailsTable resourceUrl={resouceUrl} resourceKey={res} entityId={} entityDetails={}*/}
+            {/*</Drawer>*/}
+
             {/*<strong>{`Selected ${*/}
             {/*    Object.values(selections).reduce((acc: number, curr) => acc + curr.length, 0)*/}
             {/*} item`}</strong>*/}

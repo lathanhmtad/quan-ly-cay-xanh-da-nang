@@ -5,33 +5,24 @@ import com.example.entity.Cay;
 import com.example.entity.ChiTietDiaChi;
 import com.example.entity.HinhAnh;
 import com.example.repository.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/api/cay")
 public class CayController {
-
-    @Autowired
     LoaiCayRepo loaiCayRepo;
-
-    @Autowired
     TrangThaiRepo trangThaiRepo;
-
-    @Autowired
     TuyenDuongRepo tuyenDuongRepo;
-
-    @Autowired
     CayRepo cayRepo;
-
-    @Autowired
     HinhAnhRepo hinhAnhRepo;
+
 
     @PostMapping
     public ResponseEntity<Map<String, String>> taoCay(@RequestBody CayXanhRequest cayXanhRequest) {
@@ -52,16 +43,15 @@ public class CayController {
 
             entity.setChiTietDiaChi(chiTietDiaChi);
 
-            Cay savedCay = cayRepo.save(entity);
-
-            List<HinhAnh> images = cayXanhRequest.getHinhAnh().stream().map(item -> {
+            List<HinhAnh> images = cayXanhRequest.getImages().stream().map(item -> {
                 HinhAnh h = new HinhAnh();
-                h.setCay(savedCay);
-                h.setHinhAnh(item);
+                h.setCay(entity);
+                h.setHinhAnh(item.getImageUrl());
                 return h;
             }).collect(Collectors.toList());
 
-            hinhAnhRepo.saveAll(images);
+            entity.setHinhAnh(images);
+            cayRepo.save(entity);
 
             Map<String, String> res = Map.of("success", "Tạo thành công");
             return ResponseEntity.ok(res);
@@ -89,7 +79,25 @@ public class CayController {
             chiTietDiaChi.setTuyenDuong(tuyenDuongRepo.findById(cayXanhRequest.getMaTuyenDuong()).get());
             chiTietDiaChi.setMoTaDiaChi(cayXanhRequest.getMoTaDiaChi());
 
-            cayCu.setChiTietDiaChi(chiTietDiaChi);
+            List<HinhAnh> hA = hinhAnhRepo.findByCayMaCay(cayCu.getMaCay());
+            hinhAnhRepo.deleteAll(hA);
+
+            List<HinhAnh> newHa = cayXanhRequest.getOldImages().stream().map(item -> {
+                HinhAnh h = new HinhAnh();
+                h.setCay(cayCu);
+                h.setHinhAnh(item);
+                return h;
+            }).collect(Collectors.toList());
+
+            cayXanhRequest.getImages().forEach(item -> {
+                HinhAnh h = new HinhAnh();
+                h.setCay(cayCu);
+                h.setHinhAnh(item.getImageUrl());
+
+                newHa.add(h);
+            });
+
+            cayCu.setHinhAnh(newHa);
 
             cayRepo.save(cayCu);
 

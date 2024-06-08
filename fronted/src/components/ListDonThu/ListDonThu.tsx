@@ -22,8 +22,6 @@ export default function ListDonThu(props: ListDonThuProps) {
 
     const navigate = useNavigate();
 
-
-
     return <div>
         {listResponse.content.map(item => <Card key={item.maThongTinPhanAnh}
                                                 style={{width: '100%', marginBottom: '16px'}}>

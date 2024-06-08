@@ -38,6 +38,7 @@ export default function ManageDiaDiemTheoTuyenDuong() {
 
         <ManageMain listResponse={listResponse} isLoading={isLoading}>
             <ManageTable
+                hideAction={true}
                 rowKey={ManageDiaDiemConfig.rowKeyTuyenDuong}
                 listResponse={listResponse}
                 resourceUrl={ManageDiaDiemConfig.resourceUrlDiaDiemTuyenDuong}

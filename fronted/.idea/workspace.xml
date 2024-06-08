@@ -5,64 +5,67 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4537d84-7d7b-40a0-b4ef-cc8343621822" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/CayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/PhuongXaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/TuyenDuongController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/CayResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/ChiTietDiaChiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/repository/HinhAnhRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/repository/LoaiCayRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/repository/TrangThaiRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/use-update-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeCreate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeCreate.vm.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeUpdate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeUpdate.vm.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/ListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/ListResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/CongVienResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/CongVienResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/PhuongXaResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/PhuongXaResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/QuanHuyenResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/QuanHuyenResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/TuyenDuongResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/address/TuyenDuongResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/donthu/DonThuResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/donthu/DonThuResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/ThongKeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/thongke/ThongKeTinhTrangCayDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/ThongKe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/CayMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/KeHoachMapperHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/projection/ThongKeLoaiProjection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/projection/ThongKeNhiemVuProjection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/projection/ThongKeTinhTrangCayProjection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/repository/ThongKeRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/ThongKeCards.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/ThongKeKeHoach.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/ThongKeLoaiCay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/ThongKeTinhTrangCay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/manage-ke-hoach/KeHoachCreate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/manage-ke-hoach/KeHoachCreate.vm.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/manage-ke-hoach/KeHoachUpdate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/manage-ke-hoach/KeHoachUpdate.vm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/constants/SearchFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/constants/SearchFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/CayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/CayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/GenericController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/GenericController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/GenericMappingRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/controller/GenericMappingRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/UploadImageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/UploadImageResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/kehoach/KeHoachRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/kehoach/KeHoachRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/kehoach/KeHoachResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/kehoach/KeHoachResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/tree/CayXanhRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/tree/CayXanhRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/tree/CayXanhResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/dto/tree/CayXanhResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/Cay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/Cay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/ChiTietDiaChi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/ChiTietDiaChi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/PhuongXa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/PhuongXa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/QuanHuyen.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/QuanHuyen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/ThongTinNguoiDanPhanAnh.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/ThongTinNguoiDanPhanAnh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/TuyenDuong.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/TuyenDuong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/KeHoach.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/entity/KeHoach.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/CayMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/CayMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/CongVienMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/CongVienMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/PhuongXaMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/PhuongXaMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/QuanHuyenMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/QuanHuyenMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/TuyenDuongMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/TuyenDuongMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/utils/CloudinaryUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/utils/CloudinaryUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diagram/dapm.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../diagram/dapm.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diagram/erd_dapm.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/../diagram/erd_dapm.mdj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/KeHoachMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/mapper/KeHoachMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/repository/HinhAnhRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/repository/HinhAnhRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/service/impl/ImageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/service/impl/ImageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientCategories/ClientCategories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientCategories/ClientCategories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientNews/ClientNews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientNews/ClientNews.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientProjectImplemented/ClientProjectImplemented.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientProjectImplemented/ClientProjectImplemented.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DonThuDetails/DonThuDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DonThuDetails/DonThuDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EntityDetailsTable/EntityDetailsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntityDetailsTable/EntityDetailsTable.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ListDonThu/ListDonThu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListDonThu/ListDonThu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ManageHeaderButtons/ManageHeaderButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManageHeaderButtons/ManageHeaderButtons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ManageTable/ManageTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManageTable/ManageTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/use-create-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-create-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ManageTable/ManageTable.vm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ManageTable/ManageTable.vm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-get-all-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-get-all-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-get-by-id-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-get-by-id-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/use-upload-multiple-images-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-upload-multiple-images-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/BaseResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/BaseResponse.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/CayXanh.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/CayXanh.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/DiaDiem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/DiaDiem.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/DonThu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/DonThu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/KeHoach.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/KeHoach.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/client-contact/ClientContact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/client-contact/ClientContact.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemConfig.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/ManageTree.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeManage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemTheoCongVien.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemTheoCongVien.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemTheoPhuongXa.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemTheoPhuongXa.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemTheoQuanHuyen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemTheoQuanHuyen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemTheoTuyenDuong.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-dia-diem/ManageDiaDiemTheoTuyenDuong.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/ManageTreeConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/ManageTreeConfig.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/TreeCreate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeCreate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/TreeCreate.vm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeCreate.vm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/TreeManage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeManage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/TreeUpdate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeUpdate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage-tree/TreeUpdate.vm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-tree/TreeUpdate.vm.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/manage-user/ManageUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage-user/ManageUser.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/FetchUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FetchUtils.ts" afterDir="false" />
     </list>
@@ -74,14 +77,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -89,17 +96,21 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2gU4eEaRLWeYvZvbfCfJYYqYxFQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/java-projects/electro/electro-server&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/java/java-projects/quan-ly-cay-xanh-da-nang/fronted&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -108,7 +119,7 @@
     &quot;npm.start.executor&quot;: &quot;Run&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\java-projects\\quan-ly-cay-xanh-da-nang\\fronted\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\java\\java-projects\\quan-ly-cay-xanh-da-nang\\fronted\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -119,7 +130,7 @@
       <scripts>
         <script value="start" />
       </scripts>
-      <node-interpreter value="$PROJECT_DIR$/../../../Program Files/nodejs/node" />
+      <node-interpreter value="node" />
       <envs />
       <method v="2" />
     </configuration>
@@ -156,10 +167,33 @@
       <workItem from="1716515507067" duration="15000" />
       <workItem from="1716889850697" duration="1206000" />
       <workItem from="1717042653013" duration="6001000" />
+      <workItem from="1717393558209" duration="24735000" />
+      <workItem from="1717425788897" duration="42000" />
+      <workItem from="1717425839258" duration="284000" />
+      <workItem from="1717484318042" duration="11925000" />
+      <workItem from="1717554610680" duration="15702000" />
+      <workItem from="1717641542977" duration="5372000" />
+      <workItem from="1717719444216" duration="9937000" />
+      <workItem from="1717763755989" duration="896000" />
+      <workItem from="1717810614195" duration="2504000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

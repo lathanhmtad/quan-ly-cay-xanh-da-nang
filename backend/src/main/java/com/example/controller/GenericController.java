@@ -32,7 +32,7 @@ public class GenericController<I, O> {
             @RequestParam(name = "search", required = false) @Nullable String search,
             @RequestParam(name = "all", required = false) boolean all
     ) {
-        return ResponseEntity.status(HttpStatus.OK).body(crudService.findAll(page, size, sort, filter, search, all));
+            return ResponseEntity.status(HttpStatus.OK).body(crudService.findAll(page, size, sort, filter, search, all));
     }
 
     public ResponseEntity<O> getResource(@PathVariable("id") Long id) {

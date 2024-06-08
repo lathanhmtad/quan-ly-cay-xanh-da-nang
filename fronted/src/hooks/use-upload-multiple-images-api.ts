@@ -3,6 +3,7 @@ import FetchUtils, { ErrorMessage } from '../utils/FetchUtils';
 import { CollectionWrapper } from '../types';
 import { UploadedImageResponse } from '../models/Image';
 import NotifyUtils from '../utils/NotifyUtils';
+import {RcFile} from "antd/es/upload";
 
 function useUploadMultipleImagesApi() {
     return useMutation<CollectionWrapper<UploadedImageResponse>, ErrorMessage, File[]>(

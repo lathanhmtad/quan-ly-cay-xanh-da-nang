@@ -38,6 +38,7 @@ export default function ManageDiaDiemTheoPhuongXa() {
 
         <ManageMain listResponse={listResponse} isLoading={isLoading}>
             <ManageTable
+                hideAction={true}
                 rowKey={ManageDiaDiemConfig.rowKeyPhuongXa}
                 listResponse={listResponse}
                 resourceUrl={ManageDiaDiemConfig.resourceUrlDiaDiemPhuongXa}

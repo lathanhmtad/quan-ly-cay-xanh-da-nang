@@ -8,6 +8,8 @@ import {CayXanhRequest} from "../../models/CayXanh";
 export default function TreeCreate() {
 
     const {
+        loading,
+        handleSubmit,
         handleOpenPreview,
         handleChangeImageFile,
         imageFiles,
@@ -24,7 +26,7 @@ export default function TreeCreate() {
     } = useTreeCreateViewModel()
 
     const onFinish: FormProps<CayXanhRequest>['onFinish'] = (values) => {
-
+        handleSubmit(values)
     };
 
     return <div className='client-contact'>
@@ -36,6 +38,7 @@ export default function TreeCreate() {
                 name="basic"
                 labelCol={{span: 24}}
                 wrapperCol={{span: 24}}
+                disabled={loading}
                 style={{width: '100%'}}
                 initialValues={{}}
                 onFinish={onFinish}
@@ -73,6 +76,7 @@ export default function TreeCreate() {
                         >
                             <DatePicker
                                 style={{width: '100%'}}
+                                // locale={}
                             />
                         </Form.Item>
                     </Col>
@@ -139,7 +143,7 @@ export default function TreeCreate() {
                     />
                 </Form.Item>
 
-                <Row>
+                <Row gutter={[24, 0]}>
                     <Col span={8}>
                         <Form.Item
                             label="Quận/Huyện"
@@ -195,7 +199,6 @@ export default function TreeCreate() {
                         >
                             <Upload
                                 multiple
-                                // name='file'
                                 listType="picture-card"
                                 action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
                                 fileList={imageFiles}
@@ -223,7 +226,9 @@ export default function TreeCreate() {
                     </Col>
                 </Row>
                 <Form.Item wrapperCol={{offset: 22, span: 16}}>
-                    <Button size='large' type="primary" style={{width: '100%'}} htmlType="submit">
+                    <Button
+                        loading={loading}
+                        size='large' type="primary" style={{width: '100%'}} htmlType="submit">
                         Gửi
                     </Button>
                 </Form.Item>

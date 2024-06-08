@@ -1,29 +1,35 @@
 import BaseResponse from "./BaseResponse";
-import {HinhAnhDto} from "./HinhAnh";
+import {UploadedImageResponse} from "./Image";
 
 export interface CayXanhResponse extends BaseResponse {
     maCay: number
-    toaDo: string
     tenCay: string
-    hinhAnh: HinhAnhDto[]
-    loaiCay: string
     ngayTrong: string
     tanCayChePhu: string
     chieuCao: string
     duongKinh: string
-    diaChi: string
+    toaDo: string
+    moTaDiaChi: string
+    loaiCay: string
     trangThaiCay: string
+    tuyenDuong: string
+    maTuyenDuong: number
+    phuongXa: string
+    quanHuyen: string
+    images: UploadedImageResponse[]
 }
 
 export interface CayXanhRequest {
     tenCay: string
     maLoaiCay: number
-    ngayTrong: Date
+    ngayTrong: string
     tanCayChePhu: number
     chieuCao: number;
     duongKinh: number
     toaDo: string
-    maTrangThaiCay: number;
-    maTuyenDuong: number;
+    maTrangThaiCay: number
+    maTuyenDuong: number
     moTaDiaChi: string
+    oldImages?: string[]
+    images: UploadedImageResponse[]
 }

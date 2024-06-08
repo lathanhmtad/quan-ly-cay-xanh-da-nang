@@ -1,11 +1,11 @@
-import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import React, {useState} from 'react';
+import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import useDeleteByIdApi from '../../hooks/use-delete-by-id-api';
 import BaseResponse from '../../models/BaseResponse';
-import { ManageTableProps } from './ManageTable';
-import { setActivePage, setSelections } from '../../redux/slices/managePageSlice';
+import {ManageTableProps} from './ManageTable';
+import {setActivePage, setSelections} from '../../redux/slices/managePageSlice';
 import EntityDetailsTable from '../EntityDetailsTable/EntityDetailsTable';
-import { App } from 'antd';
+import {App} from 'antd';
 
 function useManageTableViewModel<T extends BaseResponse>({
                                                              listResponse,
@@ -15,11 +15,13 @@ function useManageTableViewModel<T extends BaseResponse>({
                                                              entityDetails
                                                          }: ManageTableProps<T>) {
 
-    const { modal, message } = App.useApp();
+    const {modal, message} = App.useApp();
 
     const dispatch = useAppDispatch();
 
-    const key : string = 'deletable';
+    const key: string = 'deletable';
+
+    const [open, setOpen] = useState(false)
 
     const
         {
@@ -34,19 +36,21 @@ function useManageTableViewModel<T extends BaseResponse>({
         // dispatch(setSelections(newSelectedRowKeys));
     };
 
-    const handleViewEntityButton = (entityId: number, url? : string, key? : string) => {
+    const handleViewEntityButton = (record: T) => {
         modal.info(
             {
                 title: 'Thông tin',
                 content: (
-                    <EntityDetailsTable entityDetails={entityDetails} resourceUrl={url ? url : resourceUrl} resourceKey={key ? key : resourceKey}
-                                        entityId={entityId}/>
+                    <EntityDetailsTable
+                        entityDetails={entityDetails} data={record}/>
                 ),
-                onOk: () => {},
+                onOk: () => {
+                },
                 maskClosable: true,
                 width: '50%'
             }
         );
+
     };
 
     const handleDeleteEntityButton = (entityId: number) => {
@@ -85,7 +89,9 @@ function useManageTableViewModel<T extends BaseResponse>({
         handleViewEntityButton,
         activePage,
         // selections,
-        handleDeleteEntityButton
+        handleDeleteEntityButton,
+        open,
+        setOpen
     };
 }
 

@@ -117,6 +117,7 @@ export const diaDiemCongVienTableHeads: TableProps<CongVienResponse>['columns'] 
         title: 'Tổng số cây',
         dataIndex: 'tongSoCay',
         key: 'tongSoCay',
+        render: () => Math.floor(Math.random() * 6)
     },
 ];
 

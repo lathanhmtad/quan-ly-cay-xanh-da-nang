@@ -74,10 +74,10 @@ export const treeEntityDetails = (data: CayXanhResponse): DescriptionsProps['ite
 class ManageTreeConfigs {
     static rowKey = "maCay"
     static resourceUrl = ResourceUrl.TREE;
-    static resourceKey = 'nguoiDung';
-    static manageTitle = 'Quản lý người dùng';
-    static createTitle = 'Thêm người dùng';
-    static updateTitle = 'Cập nhập người dùng';
+    static resourceKey = 'tree';
+    static manageTitle = 'Quản lý cây';
+    static createTitle = 'Thêm cây';
+    static updateTitle = 'Cập nhập cây';
 }
 
 export default ManageTreeConfigs;

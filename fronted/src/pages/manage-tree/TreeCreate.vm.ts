@@ -8,6 +8,9 @@ import {Form, GetProp, notification, UploadFile, UploadProps} from "antd";
 import useCreateApi from "../../hooks/use-create-api";
 import {CayXanhRequest} from "../../models/CayXanh";
 import useUploadMultipleImagesApi from "../../hooks/use-upload-multiple-images-api";
+import {UploadedImageResponse} from "../../models/Image";
+
+import moment from 'moment';
 
 type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
 
@@ -46,20 +49,13 @@ export default function useTreeCreateViewModel() {
     const createApi = useCreateApi<CayXanhRequest, any>
     (`${ApplicationConstants.API_PATH}/cay`)
 
-    const handleQuanHuyenChange = (value: string) => {
-        loadSelectListPhuongXaByQuanHuyen(value)
-    };
-
-    const handleTuyenDuongChange = (value: string) => {
-        loadSelectListTuyenDuongByPhuongXa(value)
-    };
-
     const uploadImagesApi = useUploadMultipleImagesApi()
 
     const handleChangeImageFile: UploadProps['onChange'] =
         ({fileList: newFileList}) => {
+
             setImageFiles(newFileList);
-            form.setFieldsValue({images: newFileList});
+            form.setFieldValue("imageFiles", newFileList);
         }
 
     useGetAllApi<QuanHuyenResponse>
@@ -76,6 +72,14 @@ export default function useTreeCreateViewModel() {
         }
     )
 
+    const handleQuanHuyenChange = (value: string) => {
+        loadSelectListPhuongXaByQuanHuyen(value)
+    };
+
+    const handleTuyenDuongChange = (value: string) => {
+        loadSelectListTuyenDuongByPhuongXa(value)
+    };
+
     const loadSelectListPhuongXaByQuanHuyen = async (maQuan: string) => {
         try {
             const response: Response = await fetch(`${ApplicationConstants.API_PATH}/phuong-xa/${maQuan}`);
@@ -90,7 +94,6 @@ export default function useTreeCreateViewModel() {
             setPhuongXaSelectList(phuongXaOptions);
         } catch (error) {
             console.error('Failed to fetch phuong xa:', error);
-            // Handle errors as appropriate for your application
         }
     };
 
@@ -108,33 +111,38 @@ export default function useTreeCreateViewModel() {
             setTuyenDuongSelectList(tuyenDuongOptions);
         } catch (error) {
             console.error('Failed to fetch phuong xa:', error);
-            // Handle errors as appropriate for your application
         }
     };
 
     const handleSubmit = (values: CayXanhRequest) => {
-        const requestBody: CayXanhRequest = {
-            tenCay: values.tenCay,
-            maLoaiCay: values.maLoaiCay,
-            ngayTrong: values.ngayTrong,
-            tanCayChePhu: values.tanCayChePhu,
-            chieuCao: values.chieuCao,
-            duongKinh: values.duongKinh,
-            toaDo: values.toaDo,
-            maTrangThaiCay: values.maTrangThaiCay,
-            maTuyenDuong: values.maTuyenDuong,
-            moTaDiaChi: values.moTaDiaChi
-        }
-        createApi.mutate(requestBody, {
-            onSuccess: async () => {
-                notification.success({
-                    message: 'Tạo thành công'
-                });
+        setLoading(true)
+        const createCay = (imageUrls: UploadedImageResponse[]) => {
+            const requestBody: CayXanhRequest = {
+                tenCay: values.tenCay,
+                maLoaiCay: values.maLoaiCay,
+                ngayTrong: values.ngayTrong,
+                tanCayChePhu: values.tanCayChePhu,
+                chieuCao: values.chieuCao,
+                duongKinh: values.duongKinh,
+                toaDo: values.toaDo,
+                maTrangThaiCay: values.maTrangThaiCay,
+                maTuyenDuong: values.maTuyenDuong,
+                moTaDiaChi: values.moTaDiaChi,
+                images: imageUrls
             }
+            createApi.mutate(requestBody, {
+                onSuccess: () =>
+                    setLoading(false),
+                onError: () => setLoading(false)
+            })
+        }
+
+        // @ts-ignore
+        uploadImagesApi.mutate(imageFiles.map(item => item.originFileObj), {
+            onSuccess: (imageCollectionResponse) =>
+                createCay(imageCollectionResponse.content),
+            onError: () => setLoading(false)
         })
-
-        // uploadImagesApi.mutate(fileList.map(item => item.originFileObj as File))
-
     }
 
     return {
@@ -150,6 +158,8 @@ export default function useTreeCreateViewModel() {
         handleTuyenDuongChange,
         handleChangeImageFile,
         imageFiles,
-        handleOpenPreview
+        handleOpenPreview,
+        loading,
+        handleSubmit
     }
 }

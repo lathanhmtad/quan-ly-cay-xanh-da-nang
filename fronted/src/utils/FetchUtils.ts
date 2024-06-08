@@ -297,7 +297,7 @@ class FetchUtils {
         const formData = new FormData();
         images.forEach((image) => formData.append('images', image));
 
-        const response = await fetch(ApplicationConstants.HOME_PATH + '/images/upload-multiple', {
+        const response = await fetch(ApplicationConstants.API_PATH + '/images/upload-multiple', {
             method: 'POST',
             body: formData,
         });

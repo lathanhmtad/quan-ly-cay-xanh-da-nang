@@ -18,10 +18,12 @@ import ManageDonThu from "./pages/manage-don-thu";
 import DonThuDetails from "./components/DonThuDetails";
 import ManageDiaDiem from "./pages/manage-dia-diem";
 
-import { App as AppAntd } from 'antd';
+import {App as AppAntd} from 'antd';
+import KeHoachCreate from "./pages/manage-ke-hoach/KeHoachCreate";
+import KeHoachUpdate from "./pages/manage-ke-hoach/KeHoachUpdate";
 
 function App() {
-    return  <AppAntd>
+    return <AppAntd>
         <Routes>
             <Route path='/' element={<Client/>}>
                 <Route index element={<ClientHome/>}/>
@@ -38,6 +40,9 @@ function App() {
                 <Route path='cay-xanh/update/:id' element={<TreeUpdate/>}/>
 
                 <Route path='ke-hoach' element={<ManageKeHoach/>}/>
+                <Route path='ke-hoach/create' element={<KeHoachCreate/>}/>
+                <Route path='ke-hoach/update/:id' element={<KeHoachUpdate/>}/>
+
                 <Route path='don-thu' element={<ManageDonThu/>}/>
                 <Route path='chi-tiet-don-thu/:id' element={<DonThuDetails/>}/>
                 <Route path='dia-diem' element={<ManageDiaDiem/>}/>

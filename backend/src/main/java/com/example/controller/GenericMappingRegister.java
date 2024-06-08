@@ -72,7 +72,7 @@ public class GenericMappingRegister {
         register("cay-xanh", cayXanhController, cayXanhService.init(
                 context.getBean(CayRepo.class),
                 context.getBean(CayMapper.class),
-                SearchFields.NGUOI_DUNG,
+                SearchFields.CAY_XANH,
                 ResourceName.NGUOI_DUNG
         ), CayXanhRequest.class);
 

@@ -38,6 +38,7 @@ export default function ManageDiaDiemTheoCongVien() {
 
         <ManageMain listResponse={listResponse} isLoading={isLoading}>
             <ManageTable
+                hideAction={true}
                 rowKey={ManageDiaDiemConfig.rowKeyCongVien}
                 listResponse={listResponse}
                 resourceUrl={ManageDiaDiemConfig.resourceUrlDiaDiemCongVien}
